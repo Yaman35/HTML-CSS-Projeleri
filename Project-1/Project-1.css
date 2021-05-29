@@ -1,0 +1,98 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap"); /* fonts.googleapis.com dan site yazı stili için bu ifade yazılır*/
+                                                                                      /* fontawesome.com dan da iconlar seçebiliyoruz */
+
+* {                                /* Her projede başlangıçta kullanılır */
+  margin: 0;
+  padding: 0;
+
+}
+.container {
+  background: url(bg.jpg);        /* Arka plan resmini ayarladık */
+  height: 100vh;                   /* 50vh yapılırsa sayfanın yarısını doldurur */
+  background-size: 100% 100%;     /* 50% 50% yapılırsa sayfada 4 resim oluşuyor */
+}
+
+.container .navbar {
+  width: 100%;
+  height: 80px;
+  background: rgba(22, 112, 214, 0.4);  /* background içine her türlü değer (color,yükselik etc.) yazılabilliyor */
+}
+
+.navbar .logo {
+  display: inline-block;          /* li etiketleriyle aynı hizaya getirir */
+  margin-left: 50px;
+  margin-top: 20px;               /* margin ile dış taraftan boşluk bırakıyoruz */
+}
+
+.navbar .logo a {
+  text-decoration: none;         /* Linkin altındaki çizgiyi kaldırıyor */
+  font-size: 30px;
+  font-family: sans-serif;
+  color: #f3f3f3;
+}
+
+.navbar ul {
+  float: right;                 /* Menüyü sağ tarafa yerleştirmek için kullanılır, left deseydik sola koyardı */
+  margin-right: 20px;
+}
+.navbar ul li {
+  list-style: none;           /* list lerin önündeki noktaları kadlrımak için kullandık */
+  display: inline-block;      /* Menü tasarımlarında navbar seçeneklerini yanyana yazdırmak için kullaanılır, aksi takdirde html deki gibi alt alta yazar*/
+  margin: 0 8px;              /* Üstten 0 yanlardan 8px boşluk verdik her iki navbar seçeneği arasında 8+8=16 px boşluk olur */
+  line-height: 80px;          /* Satırlar arası boşluk için kullandık */
+}
+.navbar ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  padding: 6px 13px;
+  font-family: Roboto;
+  transition: 0.5s;           /* Bununla gecikme süresi ayarlayabiliyoruz, görsellik açısından kullanımı uygun olur */
+}
+.navbar ul li a.active,       /* active class a sahip seçenek ve.... Bunu ilk başta yazmasaydık da olurdu, böyle olunca direk  uygulanmış geldi */
+.navbar ul li a:hover {       /* Menü bar üzerindeki seçeneklerin üzerine gelindiğinde işlem yaptırmak için yazıldı */
+  background: #ff6e00;
+  border-radius: 5px;         /* Köşeleri yuvarlamak için kullanıldı */
+} 
+.container .center {
+  position: absolute;        /* Çerçeve içine yazdırabilmek için kullanıldı, relative olsaydı olmazdı yanına yazardı */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);  /*  ???? */
+  font-family: sans-serif;
+  user-select: none;         /* Kullanıcının texti seçememesini sağlar */
+}
+.center h1 {
+  color: black;
+  font-size: 70px;
+  font-weight: bold;
+  width: 900px;
+  text-align: center;
+}
+.center h2 {
+  color: #fff;
+  font-size: 50px;
+  font-weight: bold;
+  width: 885px;
+  margin-top: 10px;
+  text-align: center;
+}
+.center .buttons {
+  margin: 35px 280px;        /* Div içerisinde bulunan butonların konumunu ayarlamak için kullanıldı */
+}
+.buttons button {
+  height: 50px;
+  width: 150px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #ffb3b3;
+  background-color: rgb(207, 96, 88);
+  border: 1px solid red;
+  cursor: pointer;           /* Mouse ile üzerine gelince cursor ok tan el işaretine dönüştürmek için kullanılıt */
+  outline: none;             /* ????????????????? */
+  border-radius: 25px;       /* Butonların kanarlarını kırpmak için kullanıldı, hower yaptığında da olabilirdi */
+  transition: 0.5s;
+}
+.buttons button:hover {      /* Buton üzerine gelindiğinde arka plan rengini değiştirir */
+  background: #fff; 
+}
