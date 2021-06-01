@@ -1,0 +1,71 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background: #34495e;
+}
+
+.box {
+  width: 300px;
+  padding: 40px;
+  position: absolute;
+  top: 50%;          /* Form etiketinin sayfadaki yerinin belirledik*/
+  left: 50%;
+  transform: translate(-50%, -50%); /*??????????*/
+  background: #191919;
+  text-align: center;
+}
+
+.box h1 {
+  color: white;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.box input[type="text"],
+.box input[type="password"] {
+  background: none;
+  display: block;         /* inline-block yazsaydık butonlar yanyana olacaktı */
+  margin: 20px auto;
+  text-align: center;
+  border: 2px solid #3498db;
+  padding: 14px 10px;
+  width: 150px;
+  outline: none;
+  color: #fff;
+  border-radius: 24px;
+  transition: 0.25s;
+}
+
+.box input[type="text"]:focus,
+.box input[type="password"]:focus {
+  width: 250px;
+  border-color: #2ecc71;
+  
+}
+
+.box input[type="text"]:focus::placeholder,
+.box input[type="password"]:focus::placeholder {
+  color: transparent;        /* Placeholder yazısını kaldırmak için yazıldı */
+  
+}
+
+.box input[type="submit"] {
+  
+  background: #3498db;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  border: 1px solid #3498db;
+  padding: 14px 40px;
+  outline: none;
+  color: #fff;
+  border-radius: 24px;
+  transition: 0.25s;
+  cursor:pointer;
+  font-size: 16px;
+  font-weight: bold;
+}
+.box input[type="submit"]:hover {
+  background: #2ecc71;
+}

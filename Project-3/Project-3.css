@@ -1,0 +1,118 @@
+* {                               /* Standart margin ve padding sıfırlama işlemleri yapıldı */
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.banner {
+  width: 100%;
+  height: 100vh;
+  background-image:  linear-gradient(to bottom right,rgba(243, 13, 33, 0.438), rgba(17, 170, 63, 0.75)), url(img/room.jpg); /* Renk geçişi vermek için kullanıldı */
+  background-size: cover;           /* Arka plan fotoğrafı sayfaya tam otursun diye kullanuıldı */
+  background-position: center;      /* Fotoğrafı merkezi konuma almak için kullanıldı */
+}
+
+.navbar {
+  width: 85%;                      /* navbar div inin boyutunu sayfanın %85 inde olacak şekilde ayarladık */
+  margin: auto;                    /* Aslında margin : 0 ya da margin: initial ile aynı kullanıma sahiptir */
+  padding: 35px 0;                 /* li lerin div üzerindeki yerlerini ayarladık */
+  display: flex;          
+  align-items: center;             /* navbar üstündekilerin center lanması için kullanıldı, genellikle display: flex ile birlikte kullanılır */
+  justify-content: space-between;  /* Items will have space between them, elemanların div içindeki yerini ayarlamak için kullanıldı */
+}
+
+.logo {
+  width: 200px;
+  padding: 15px 0;
+  text-align: center;
+  margin: 20px 10px;
+}
+
+.navbar ul li {
+  list-style: none;              /* list elemanlaraının başındaki sembolleri silmek için kullanıldı, ancak alt alta yazıldıklarında görünebilir oluyorlar */
+  display: inline-block;         /* Navbar elemanlarını standart yan yana yazdırmak için kullanıldı. */
+  margin: 0 20px;                /* Elemanlar arasındaki boşlukları ayarladık */
+  position: relative;            
+}
+
+.navbar ul li a {
+  text-decoration: overline underline;        /* li lerin hem üstüne hem de altına çizgi oluşması için yazıldı */
+  color: #fff;
+  text-transform: uppercase;    /* Bütün harfleri büyük olsun diye yazıldı */
+}
+
+.navbar ul li::after {
+  content: "";     /* ::after ve ::before sözde öğeleriyle birlikte MUTLAKA content kullanılmalıdır. Burada ilk önce boş bir content belirledik */
+  height: 3px;     /* Çıkacak olan şeyin yüksekliğini belirledik */
+  background: #009688;
+  position: absolute;
+  left: 0px;       /* Soldan hiç pay bırakmadık sıfıra sıfırdan başlasın dedik */
+  top: 20px;       /* Yukarıdan da 20 px lik kısımda başlasın demektir, aksi takdirde seçeneklerin üzerinde çıkıyor*/
+  transition: 0.5s; /* Geçiş efekti süresi verdik */
+  width: 10px;      /* Başlangıç genişliğini verdik elemana */
+}
+
+.navbar ul li:hover::after {  /* İşte burada seçenekler üzerine geldikten sonra genişliğini seçenek kadar uzat demektir */
+  width: 50%;                 /* Eğer bunu 50% yapsaydık yarısına çizgi ancak yarısına kadar gelirdi*/
+}
+
+.content {
+  width: 100%;                   /*Sayfanın tamamına yayılsın diye */
+  position: absolute;      
+  top: 50%;                      /* Sayfanın üstten %50 sine yerleştirdik yani tam ortasına */
+  transform: translateY(-50%);   /* Burada bunun kullanımının bir mantığını anlayamadım */
+  text-align: center;            /* Div içerisindeki yazının ortalanması için kullandık */
+  color: #fff;
+}
+
+.content h1 {
+  font-size: 50px; 
+  margin-top: 100px;
+  user-select: none;
+}
+
+.content p {
+  margin: 20px;
+  font-weight: 100;
+  line-height: 25px;
+}
+
+.content p::selection {          /* İlgili paragrafı seçtiğimde arka plan rengini yellowgreen yap demektir */
+  background-color: yellowgreen;
+}
+
+button {
+  width: 200px;
+  padding: 15px 0;
+  text-align: center;
+  margin: 20px 20px;
+  border-radius: 25px;
+  font-weight: bold;
+  border: 2px dashed yellow;
+  background: transparent;         /* Bununla butonların arkasının transparan olmasını sağladık */
+  color: #fff;                   /* İçindeki textlerin rengi */
+  cursor: pointer;
+  position: relative;              /* sadece ilgili div içerisinde yer alabilmesi için? */
+  overflow: hidden;                /* Normalde üst üste binmemesi için kullanılır ama sanırım burada çok bir işlevi yok */
+}
+
+span {
+  background: #009688;
+  height: 100%;                   /* Butonun içinin tamamını doldurması için yazıldı */
+  width: 0;                       /* Başlagıç genişliği tıpkı navbar daki örnek gibi belirlendi, takiben arttırılmak üzere */
+  position: absolute;             /* Üzerine geldiğimizde bu olmazsa action gerçekleşmiyor? */
+  left: 0;                        /* Sol taraftan hiç boşluk bırakmadan doldursun diye yazıldı */
+  top: 0;                         /* Üst taraftan hiç boşluk bırakmadan doldursun diye yazıldı */
+  z-index: -1;         /* !!!! Burada z-index: -1 yazılarak buton içini dolduracak olan içeriği button text in arkasaında kalması için yazıldı. 
+                        Aksi takdirde renk text üzerini kaplıyor. Burada negatifin değer büyüklüğü önemli değil. Önemli olan negatif olup olmamasıdır. */
+  
+  transition: 0.5s;
+}
+
+button:hover span {
+  width: 100%;          /* Button üzerine gelindiğinde span boşluğunun butonun tamamını doldurması için yazıldı */
+}
+
+button:hover {   
+  border: 3px solid #009688 ;     /* Ayrıca button üzerine gelindiğinde border tipi ve renginin değişmesi için yazıldı için yazıldı */
+}

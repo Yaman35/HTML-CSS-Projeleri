@@ -1,0 +1,88 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
+  width: 1170px;
+  margin: auto;
+}
+
+header {
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),url(city.jpg);
+  height: 100vh;
+  -webkit-background-size: cover; /*Chrome ve Safari de açılması için yazıldı -webkit- : Google Chrome, Safari
+                                   -moz- : Mozilla Firefox
+                                   -o- : Opera
+                                   -ms- : Microsoft Browser ( Internet Explorer ) */
+
+  background-size: cover;
+  background-position: center; /* Arka plan fotoğrafını merkeze getirmek için */
+  position: relative;          /* Üst üste yazılamasınlar diye elemanlar */
+}
+
+.nav-area {
+  float: right;          /* Menu elemanlarını sağa yasladık */
+  list-style: none;      /* Noktalar gitti */
+  margin-top: 30px;
+}
+.nav-area li {
+  display: inline-block;   /* Seçenekleri yanyana yazdırdık */
+}
+
+.nav-area li a {
+  color: #fff;
+  text-decoration: none;   /*Alt çizgiler gitti*/
+  padding: 5px 20px;       /* Seçeneğin kutucuğu içindeki textin kutuya göre ayarlanması için yazıldı */
+  font-family: sans-serif;
+  font-size: 16px;
+}
+
+.nav-area li a:hover {
+  background-color: #fff; 
+  color: #333;
+}
+
+.logo img {
+  width: 200px;
+  float: left;     /* logoyu sola yasladık */
+  height: auto;
+  margin-top: 30px;
+  background: transparent; /* Arka taraftaki fotoğraf gözüksün diye */
+  opacity: 0.3;            /* 0.1 - 1.0 arasında opaklık değeri belirlemek için kullanılır */
+}
+
+.welcome-text {
+  position: absolute;     /* Üstüne yazılabilir */
+  width: 600px;
+  height: 300px;
+  margin: 20% 30%;
+}
+
+.welcome-text h1 {
+  text-align: center;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 60px;
+}
+
+.welcome-text a {
+  width: 100px;
+  height: 10px;
+  border: 1px solid #fff;
+  text-align: center;
+  padding: 10px 10px 15px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 14px;
+  margin-top: 30px;   /* h1 ile olan uzaklığı */
+  margin-left: 230px;
+  display: block;     /* display: inline olsaydı h1 etiketi yanına gelirdi*/
+  color: #fff;
+  border-radius: 25px;
+}
+
+.welcome-text a:hover {
+  background-color: #fff;
+  color: #333;
+}
