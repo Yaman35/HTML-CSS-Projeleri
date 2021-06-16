@@ -1,110 +1,109 @@
-* {
+* {                               /* Tüm etiketler için standart uygulamayı gerçekleştirdik */
   margin: 0;
   padding: 0;
   font-family: "Roboto", sans-serif;
 }
 
 .container {
-  width: 100%;
+  width: 100%;                    /* Genişliğini verdik */
   height: 100vh;                  /* Sayfanın Arka planda bir resim varsa onu sayfaya tam sığdırmak için kullanılır*/
-  background-position: center;    /* Fotoğrafı ortalamk için kullanıldı */
+  background-position: center;    /* Fotoğrafı ortalamak için kullanıldı */
   background-size: cover;         /* Resmi arka plana cuk oturtmak için kullanılır */
-  background-color: rgba(0, 0, 0, 0.7);
-  background-image: url(background.png);
-  padding-left: 8%;
+  background-image: url(background.png); /* Arka plan resmini yerleştirdik */
+  padding-left: 8%;               /* İç kısımda sağdan ve soldan boşlukları ayarladık */
   padding-right: 8%;
   box-sizing: border-box;        /* Fotoğrafı arka plana tam oturtmak için kullanılır, yoksa pixel farkından dolayı scroll bar çıkabilir. */
 }
 
-.navbar {
+.navbar {                        /* Logo ve menü seçeneklerinin olduğu navbar classına sahip div e müdahele ediyoruz */
   height: 12%;                   /* Menu bar ın div içerisinden %12 altından başlayarak yazılmasını sağladı */
-  display: flex;                 /* ???????????? */
-  align-items: center;           /* Elemanları div içerisinde hizaladık, yoksa logoları div yüksekliğine göre ayarladı*/
+  display: flex;                 /* Flex yapısı kazandırdık */
+  align-items: center;           /* Elemanları div içerisinde ortaladık */
 }
 
-.logo {
-  width: 50px;
-  cursor: pointer;
+.logo {                          /* Logoya müdahele ediyoruz */
+  width: 50px;                   /* Logo genişliğini ayarladık */
+  cursor: pointer;               /* Üzerine gelince cursor el işaretine dönsün dedik */
 }
 
-.menu-icon {
-  width: 30px;
-  cursor: pointer;
-  margin-left: 40px;            /* Menu icon u navbar seçeneklerinden uzaklaştımak için kullanıldı */
+.menu-icon {                     /* Menü icon una müdahele ediyoruz */
+  width: 30px;                   /* Genişliğini ayarladık */
+  cursor: pointer;               /* Üzerine gelince cursor el işaretine dönsün dedik */
+  margin-left: 40px;             /* Menu icon unu navbar seçeneklerinden uzaklaştımak için kullanıldı */
 }
 
-nav {
-  flex: 1;
-  text-align: right;            /* Menu elemanlarını sağa doğru alabilmek için kullanıldı */
+nav {                            /* Menu linklerinin olduğu bölgeye müdahele ediyoruz */
+  flex: 1;                       /* flex:1; dersek nav içerisindeki elemanların hepsi nav i eşit aralıklarla doldursun demektir */
+  text-align: right;             /* Menu elemanlarını sağa doğru alabilmek için kullanıldı */
 }
 
-nav ul li {
-  list-style: none;            /* Nokta kalktı */
-  display: inline-block;       /* Standart yan yana yazdırdık */
-  margin-left: 60px;           /* Elemanları önce yukarıda sağa yapıştırdı sonra da bununla da sola doğru açtı */
+nav ul li {                      /* Linklere müdahele ediyoruz */
+  list-style: none;              /* Baş taraflarındaki noktalar kalktı */
+  display: inline-block;         /* Standart yan yana yazdırdık */
+  margin-left: 60px;             /* Elemanları önce yukarıda sağa yapıştırdık sonra da bununla da sola doğru açtık */
 }
 
-nav ul li a {
-  text-decoration: none;       /* Alt çizgi kalktı */
-  color: #fff;
-  font-size: 13px;
+nav ul li a {                    /* Linklere müdaheleye devam */
+  text-decoration: none;         /* Alt çizgi kalktı */
+  color: #fff;                 /* Yazı rengini ayarladık */
+  font-size: 13px;               /* Yazı büyüklüğünü ayarladık */
 }
 
-nav ul li a:hover {
- background-color: yellow;
- text-decoration: underline;
- color: black;
+nav ul li a:hover {              /* Liste elemanlarının üzerine gelindiğinde */
+ background-color: yellow;     /* Arka plan renkleri sarı olsun */
+ text-decoration: underline;     /* Altlarına çizgi ekledik */
+ color: black;                 /* Renkleri de siyah oldu */
 }
 
 
-.row {
-  display: flex;
-  height: 88%;
-  align-items: center;
+.row {                           /* main kısma müdahele ediyoruz */
+  display: flex;                 /* Flex yapısı kazandırdık */
+  height: 88%;                   /* Yüksekliklerini ayarladık */
+  align-items: center;           /* Elemanları dikeyde ortaladık */
 }
 
 .col {
-  flex-basis: 50;               /* ??????????????? */
+  flex-basis: 50;                /* Genişliklerini ayarladık */
 }
 
-h1 {
-  color: #fff;
-  font-size: 100px;
-  text-shadow: 0 15px 10px yellow;   /* Text lerin arka planına gölge verebilmek için kullanıldı */
+h1 {                             /* h1 etiketine müdahele ediyoruz */
+  color: #fff;                 /* Rengini beyaz yaptık */
+  font-size: 100px;              /* Yazı büyüklüğünü ayarladık */
+  text-shadow: 0 15px 10px yellow;   /* Text lerin arka planına gölge verebilmek için kullanıldık */
 }
 
-p {
-  color: #fff;
-  font-size: 11px;
-  line-height: 15px;
+p {                              /* Paragrafların hepsine müdahele ediyoruz */
+  color: #fff;                 /* Yazı rengini beyaz yaptık */
+  font-size: 13px;               /* Yazı büyüklüğünü ayarladık */
+  line-height: 15px;             /* Satırlar arası mesafeyi ayarladık */
 }
 
-button {
-  width: 120px;
-  color: #000;
-  font-size: 12px;
-  padding: 12px 0;             /* Button sınırı ile içerik(explore) arasındaki uzaklığı ayarlamak için kullanıldı */
-  background: #fff;
-  border: 1px solid orange;
-  border-radius: 20px;
-  outline: none;
-  margin-top: 30px;           /* Üstteki yazı ile olan uzaklığını ayarladık */
+button {                         /* Butona müdahele ediyoruz */
+  width: 120px;                  /* Genişliğini verdik */
+  color: #000;                 /* Buton üzerindeki yazı rengini belirledik */
+  font-size: 12px;               /* Yazı büyüklüğünü ayarladık */
+  padding: 12px 0;               /* Button sınırı ile içerik(explore) arasındaki uzaklığı ayarlamak için kullanıldı */
+  background: #fff;            /* Buton arka plan rengini ayarladık */
+  border: 1px solid orange;    /* Buton border ını ayarladık */
+  border-radius: 20px;           /* Köşelerini yuvarladık */
+  outline: none;                 /* Çerçeve olmasın dedik */
+  margin-top: 30px;              /* Üstteki yazı ile olan uzaklığını ayarladık */
 }
 
-.card {
-  width: 200px;
-  height: 230px;
-  display: inline-block;
-  border-radius: 10px;
-  padding: 20px 25px;
-  box-sizing: border-box;
-  cursor: pointer;
-  margin: 10px 15px;
-  background-position: center;
-  background-size: cover;
+.card {                           /* Resim ve bilgilerin olduğu div */
+  width: 200px;                   /* Genişlik */
+  height: 230px;                  /* Yüksekliik */
+  display: inline-block;          /* Elemanları yanyana yazdırdık */
+  border-radius: 10px;            /* Köşeleri yuvarladık */
+  padding: 20px 25px;             /* İç boşluklar ayarlandı */
+  box-sizing: border-box;         /* Sadece kutu içerisinde olsun ölçüler */
+  cursor: pointer;                /* Mouse işareti */
+  margin: 10px 15px;              /* Dış boşluklar ayarlandı */
+  background-position: center;    /* Resim tam ortalansın */
+  background-size: cover;         /* Resim div e tam otursun */
   transition: transform 0.5s;     /* Geçiş efektlerinin hızını ayarlamak için kullanıldı, renk olur burada yerini değiştirir */
 }
-.card1 {
+.card1 {                                         /* card div lerine sırasıyla arka plan resimlerini ekledik */
   background-image: url(img/pic-1.png);
 }
 .card2 {
@@ -117,13 +116,14 @@ button {
   background-image: url(img/pic-4.png);
 }
 .card:hover {
-  transform: translateY(-10px);     /* Burada da resmin üzerine gelindiğinde Y ekseninde 10 px lik hareket etmesini sağladık */
+  transform: translateY(-10px);       /* Burada da resmin üzerine gelindiğinde Y ekseninde 10 px lik hareket etmesini sağladık */
 }
-h5 {
-  color: black;
-  text-shadow: 0 -15px 300px red;  /* Text lerin arka planına gölge verebilmek için kullanıldı */
+h5 {                                  /* card ların üstündeki başlıklara müdahele ediyoruz */
+  color: black;                     /* Yazı rengini ayarladık */
+  text-shadow: 0 -15px 300px red;   /* Text lerin arka planına gölge verebilmek için kullanıldı */
 }
-.card p {
-  text-shadow: 0 0 15px #000;
-  font-size: 8px;
+.card p {                             /* card ların üzerindeki paragraflara müdahele ediyoruz */
+  text-shadow: 0 0 15px #000;       /* Yazı gölgelendirme */
+  font-size: 15px;                    /* Yazı boyutu */
+  margin-top: 15px;                   /* Başlık ile aralarını açtık */
 }
