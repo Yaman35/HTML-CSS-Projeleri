@@ -1,118 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Tangerine:wght@700&display=swap'); /* fonts.google sitesinden yazı stilini kullanabilmek için bu yapıştırılır */
+@import url('https://fonts.googleapis.com/css2?family=Marck+Script&family=Tangerine:wght@700&display=swap');
+
 * {                               /* Standart margin ve padding sıfırlama işlemleri yapıldı */
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: sans-serif;        /* Tüm sayfanın yazi stilini belirledik */ 
 }
 
-.banner {
-  width: 100%;
-  height: 100vh;
+.banner {                         /* Tüm etiketleri kapsayan div, bir nevi arka plan */
+  width: 100%;                    /* Genişliği sayfa boyunca olsun dedik */
+  height: 100vh;                  /* Yüksekliği yine sayfa boyunca olsun demektir */
   background-image:  linear-gradient(to bottom right,rgba(243, 13, 33, 0.438), rgba(17, 170, 63, 0.75)), url(img/room.jpg); /* Renk geçişi vermek için kullanıldı */
-  background-size: cover;           /* Arka plan fotoğrafı sayfaya tam otursun diye kullanuıldı */
-  background-position: center;      /* Fotoğrafı merkezi konuma almak için kullanıldı */
+                                  /* linear gradient ile bir renkten başka bir renge geçişleri yön belirterek gerçekleştirebiliyoruz */
+  background-size: cover;         /* Arka plan fotoğrafı sayfaya tam otursun diye kullanıldı */
+  background-position: center;    /* Fotoğrafı merkezi konuma almak için kullanıldı */
 }
 
-.navbar {
-  width: 85%;                      /* navbar div inin boyutunu sayfanın %85 inde olacak şekilde ayarladık */
-  margin: auto;                    /* Aslında margin : 0 ya da margin: initial ile aynı kullanıma sahiptir */
-  padding: 35px 0;                 /* li lerin div üzerindeki yerlerini ayarladık */
-  display: flex;          
-  align-items: center;             /* navbar üstündekilerin center lanması için kullanıldı, genellikle display: flex ile birlikte kullanılır */
-  justify-content: space-between;  /* Items will have space between them, elemanların div içindeki yerini ayarlamak için kullanıldı */
+.navbar {                         /* Logo ve seçeneklerin olduğu alana müdahele ediyoruz */
+  width: 85%;                     /* navbar div inin boyutunu sayfanın %85 inde olacak şekilde ayarladık */
+  margin: auto;                   /* navbar class ına sahip div in dış boşluklarını ayarladık */
+  padding: 35px 0;                /* li lerin div üzerindeki yerlerini ayarladık, üstten alttan boşluklarını verdirdik */
+  display: flex;                  /* navbar a flex yapısı kazandırarak içindekilere daha rahat müdahele edebiliriz, hepsini yanyana getirdik  */
+  align-items: center;            /* navbar içindekilerin dikeyde ortalanması için kullanıldı, display: flex yazıldıktan sonra bu kod yazılabilir */
+  justify-content: space-between; /* Elemanların div içindeki yerini ayarlamak için kullanıldı (her birisi arasındaki boşluklar eşit ve baştaki ile sondaki kenarlara yapışık olacak şekilde) */
 }
 
-.logo {
-  width: 200px;
-  padding: 15px 0;
-  text-align: center;
-  margin: 20px 10px;
+.logo {                           /* navbar içerisindeki logo ya müdahele ediyoruz */
+  width: 200px;                   /* Genişliğini belirledik */
+  padding: 15px 0;                /* navbar içindeki alttan üstten iç boşluğu ayarladık */
+  margin: 20px 10px;              /* Dış boşluklarını ayarladık */
 }
 
-.navbar ul li {
-  list-style: none;              /* list elemanlaraının başındaki sembolleri silmek için kullanıldı, ancak alt alta yazıldıklarında görünebilir oluyorlar */
-  display: inline-block;         /* Navbar elemanlarını standart yan yana yazdırmak için kullanıldı. */
-  margin: 0 20px;                /* Elemanlar arasındaki boşlukları ayarladık */
-  position: relative;            
+.navbar ul li {                   /* navbar div i içindeki listeye(içinde a etiketleri olan) müdahele ediyoruz */
+  list-style: none;               /* list elemanlarının başındaki sembolleri silmek için kullanıldı, ancak alt alta yazıldıklarında görünebilir oluyorlar */
+  display: inline-block;          /* Navbar elemanlarını yan yana yazdırmak için kullanıldı. */
+  margin: 0 10px;                 /* Elemanlar arasındaki boşlukları ayarladık(sağdan-soldan) */
+  position: relative;             /* Seçenekler altındaki çizgi efekti için alttaki position:absolute; ile birlikte yazıldı */
 }
 
-.navbar ul li a {
-  text-decoration: overline underline;        /* li lerin hem üstüne hem de altına çizgi oluşması için yazıldı */
-  color: #fff;
-  text-transform: uppercase;    /* Bütün harfleri büyük olsun diye yazıldı */
+.navbar ul li a {                 /* Liste içindeki a etiketlerine(menü linklerine) müdahele ediyoruz */
+  text-decoration: none;          /* Linklerin altındaki çizgilerin kaybolması için yazıldı */
+  color: #fff;                  /* Yazı rengi belirlendi */
+  text-transform: uppercase;      /* Bütün harfleri büyük olsun diye yazıldı, html dosyasında sadece baş harfleri büyüktü*/
 }
 
-.navbar ul li::after {
-  content: "";     /* ::after ve ::before sözde öğeleriyle birlikte MUTLAKA content kullanılmalıdır. Burada ilk önce boş bir content belirledik */
-  height: 3px;     /* Çıkacak olan şeyin yüksekliğini belirledik */
-  background: #009688;
-  position: absolute;
-  left: 0px;       /* Soldan hiç pay bırakmadık sıfıra sıfırdan başlasın dedik */
-  top: 20px;       /* Yukarıdan da 20 px lik kısımda başlasın demektir, aksi takdirde seçeneklerin üzerinde çıkıyor*/
-  transition: 0.5s; /* Geçiş efekti süresi verdik */
-  width: 10px;      /* Başlangıç genişliğini verdik elemana */
+.navbar ul li::after {            /* !!! İşte burada etiket altındaki çizgi efektini yapıyoruz !!! */
+  content: "";                    /* ::after ve ::before sözde öğeleriyle birlikte MUTLAKA content kullanılmalıdır. 
+                                     Burada ilk önce boş bir content belirledik, çünkü herahngi bir yazı istemiyoruz sadece ilerleyen çizgi olacak 
+                                     Onun için de aşağıda önce width:0 verdik daha sonra hover olunca width: 100% yaptık */
+  height: 3px;                    /* Çıkacak olan çizginin yüksekliğini belirledik */
+  background: #009688;          /* Arka plan rengini belirledik boş elemanın, color versek olmazdı çünkü o text lere etki ediyor eee burada da text yok o yüzden*/
+  position: absolute;             /* Üst tarafta verdiğimiz position:relative; ile ilikilendirmiş olduk, aksi takdirde navbar dışında çıkıyor */ 
+  left: 0px;                      /* Soldan hiç pay bırakmadık sıfıra sıfırdan başlasın dedik */
+  top: 20px;                      /* Yukarıdan da 20 px lik kısımda başlasın demektir, aksi takdirde seçeneklerin üzerinde çıkıyor*/
+  transition: 0.5s;               /* Geçiş efekti süresi verdik */
+  width: 0;                       /* Başlangıç genişliğini 0 verdik ki öncesinde gözükmesin seçenek üzerine gelince dolmaya başlasın */
 }
 
-.navbar ul li:hover::after {  /* İşte burada seçenekler üzerine geldikten sonra genişliğini seçenek kadar uzat demektir */
-  width: 50%;                 /* Eğer bunu 50% yapsaydık yarısına çizgi ancak yarısına kadar gelirdi*/
+.navbar ul li:hover::after {      /* !!! İşte burada seçenekler üzerine geldikten sonra genişliğini seçenek kadar uzat demektir */
+  width: 100%;                    /* Eğer bunu 50% yapsaydık çizgi ancak yarısına kadar gelirdi*/
 }
 
-.content {
-  width: 100%;                   /*Sayfanın tamamına yayılsın diye */
-  position: absolute;      
-  top: 50%;                      /* Sayfanın üstten %50 sine yerleştirdik yani tam ortasına */
-  transform: translateY(-50%);   /* Burada bunun kullanımının bir mantığını anlayamadım */
-  text-align: center;            /* Div içerisindeki yazının ortalanması için kullandık */
-  color: #fff;
+.content {                        /* Şimdi sayfanın içerik kısmıyla ilgileniyoruz */
+  width: 100%;                    /* Sayfanın tamamına yayılsın diye */
+  position: absolute;             /* Sayfa üzerinde rahatlıkla yeriyle oynayabilelim diye yazıldı, aksi takdirde top-left gibi değerlerini değiştirsek bile yeri değişmiyor */
+  top: 55%;                       /* Sayfanın üstten %55 ine yerleştirdik */
+  transform: translateY(-50%);    /* Burada içeriği Y ekseninde hareket ettirerek istediğimiz yere getirdik, yukarıdaki iki kodu yazmasaydık da olurdu */
+  text-align: center;             /* Div içerisindeki yazının ortalanması için kullandık */
+  color: #fff;                  /* Yazı rengini belirledik */
 }
 
-.content h1 {
-  font-size: 50px; 
-  margin-top: 100px;
-  user-select: none;
+.content h1 {                     /* İçerikteki başlık */
+  font-size: 50px;                /* Yazı büyüklüğü */
+  margin-top: 150px;              /* Yukarıdan olan dış boşluk */
+  user-select: none;              /* Kullanıcı seçemez, kopyalayamaz */
+  font-family: 'Tangerine', cursive; /* En yukarıdaki @import özelliğindeki bağlantı sayesinde bu yazı stilini burada kullanabiliyoruz */
 }
 
-.content p {
-  margin: 20px;
-  font-weight: 100;
-  line-height: 25px;
+.content p {                      /* İçerikteki paragraf */
+  margin: 30px;                   /* Dış boşluklar */
+  font-weight: 300;               /* Yazı kalınlığı */        
+  line-height: 1.5;               /* Satırlar arası mesafe, px olarak da yazılabilirdi */
+  font-family: 'Marck Script', cursive; /* En yukarıdaki @import özelliğindeki bağlantı sayesinde bu yazı stilini burada kullanabiliyoruz */
 }
 
-.content p::selection {          /* İlgili paragrafı seçtiğimde arka plan rengini yellowgreen yap demektir */
-  background-color: yellowgreen;
+.content p::selection {           /* İlgili paragrafı seçtiğimde */ 
+  background-color: yellow;     /* Arka plan rengini yellow yap demektir */
+  color: black;                 /* Yazı rengini de siyah yap demektir */
 }
 
-button {
-  width: 200px;
-  padding: 15px 0;
-  text-align: center;
-  margin: 20px 20px;
-  border-radius: 25px;
-  font-weight: bold;
-  border: 2px dashed yellow;
-  background: transparent;         /* Bununla butonların arkasının transparan olmasını sağladık */
-  color: #fff;                   /* İçindeki textlerin rengi */
-  cursor: pointer;
-  position: relative;              /* sadece ilgili div içerisinde yer alabilmesi için? */
-  overflow: hidden;                /* Normalde üst üste binmemesi için kullanılır ama sanırım burada çok bir işlevi yok */
+button {                          /* Butonlara müdahele ediyoruz */
+  width: 150px;                   /* Genişlik verdik */
+  height: 50px;                   /* Yükseklik verdik */
+  padding: 15px 0;                /* İçteki yazı için boşluk verdik */
+  text-align: center;             /* Yazıları ortaladık */
+  margin: 20px 20px;              /* Butonların dış boşluklarını ayarladık */
+  border-radius: 25px;            /* Köşelerini yuvarladık */
+  font-weight: bold;              /* Yazı kalınlığı */
+  border: 2px dashed #ffc;      /* Buton sınırlarını düzenledik */
+  background: transparent;        /* Bununla butonların arkasının transparan olmasını sağladık, yani arka plan resmi butonlarda da gözükür şekilde */
+  color: #fff;                  /* İçindeki yazıların rengi */
+  cursor: pointer;                /* Mouse el işaretine dönsün */
+  position: relative;             /* Aşağıda yazılan span boşluğunun position:absolute; yapılması ile sadece buton üzerinde bir hareketin olması sağlandı, aksi takdirde tüm sayfa etkileniyor */
+  overflow: hidden;               /* Butonların arka planı ilerlerken buton dışına taşanları saklamak için yazıldı, (spandan dolayı oluşan köşeler) */
 }
 
-span {
-  background: #009688;
-  height: 100%;                   /* Butonun içinin tamamını doldurması için yazıldı */
-  width: 0;                       /* Başlagıç genişliği tıpkı navbar daki örnek gibi belirlendi, takiben arttırılmak üzere */
-  position: absolute;             /* Üzerine geldiğimizde bu olmazsa action gerçekleşmiyor? */
-  left: 0;                        /* Sol taraftan hiç boşluk bırakmadan doldursun diye yazıldı */
+span {                            /* Buton içerisindeki efekti sağlayan span etiketine müdahele ediyoruz */
+  background: #009688;          /* Arka  plan rengini belirledik */
+  height: 100%;                   /* Butonun içinin tamamını doldurması için yazıldı,aksi takdirde yüksekliği olmazsa çıkmıyor, mesela 50% yazılırsa da bu seferde (yükseklik olarak) yarısını dolduruyor */
+  width: 0;                       /* Başlangıç genişliği tıpkı navbar daki örnek gibi belirlendi, takiben arttırılmak üzere */
+  position: absolute;             /* Üzerine bulunduğu buton ile ilişkilendirildi, aksi takdirde action gerçekleşmiyor */
+  left: 0;                        /* Sol taraftan hiç boşluk bırakmadan sıfıra sıfırdan başlasın diye yazıldı */
   top: 0;                         /* Üst taraftan hiç boşluk bırakmadan doldursun diye yazıldı */
-  z-index: -1;         /* !!!! Burada z-index: -1 yazılarak buton içini dolduracak olan içeriği button text in arkasaında kalması için yazıldı. 
-                        Aksi takdirde renk text üzerini kaplıyor. Burada negatifin değer büyüklüğü önemli değil. Önemli olan negatif olup olmamasıdır. */
-  
-  transition: 0.5s;
+  z-index: -1;                    /* !!!! Burada z-index: -1 yazılarak buton içini dolduracak olan içeriği button text in arkasında kalması için yazıldı. 
+                                     Aksi takdirde renk text üzerini kaplıyor. Burada negatifin değer büyüklüğü önemli değil. Önemli olan negatif olup olmamasıdır. */
+  transition: 0.7s;               /* Efekt için bir geçiş süresi belirlendi */
 }
 
 button:hover span {
-  width: 100%;          /* Button üzerine gelindiğinde span boşluğunun butonun tamamını doldurması için yazıldı */
+  width: 100%;                    /* ! İşte burada button üzerine gelindiğinde genişliği buton kadar yapıldı, yani span boşluğunun butonun tamamını doldurması için yazıldı */
 }
 
 button:hover {   
-  border: 3px solid #009688 ;     /* Ayrıca button üzerine gelindiğinde border tipi ve renginin değişmesi için yazıldı için yazıldı */
+  border: 3px solid #009688 ;   /* Ayrıca button üzerine gelindiğinde border tipi ve renginin değişmesi için yazıldı */
 }
