@@ -1,88 +1,89 @@
-* {
+* {                       /* Standart boşlukları sıfırlama kodları yazıldı */
   margin: 0;
   padding: 0;
 }
 
 .wrapper {
-  width: 1170px;
-  margin: auto;
+  width: 1170px;          /* Kapsayıcı div in genişliği belirlendi */
+  margin: auto;           /* Dış boşlukları ayarlandı */
 }
 
 header {
-  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),url(city.jpg);
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url(city.jpg); /* Arka plan resmi ve rengi ayarlandı */
   height: 100vh;
   -webkit-background-size: cover; /*Chrome ve Safari de açılması için yazıldı -webkit- : Google Chrome, Safari
                                    -moz- : Mozilla Firefox
                                    -o- : Opera
                                    -ms- : Microsoft Browser ( Internet Explorer ) */
-
-  background-size: cover;
+  background-size: cover;      /* Arka plan resmi sayfayı tamamen kaplasın dedildi */
   background-position: center; /* Arka plan fotoğrafını merkeze getirmek için */
-  position: relative;          /* Üst üste yazılamasınlar diye elemanlar */
+  position: relative;          /* Sayfa üzerine yazılabilmesi, element yerleştirilebilmesi için */ */
 }
 
-.nav-area {
-  float: right;          /* Menu elemanlarını sağa yasladık */
-  list-style: none;      /* Noktalar gitti */
-  margin-top: 30px;
+.nav-area {                /* Menu seçeneneklerinin genel kapsayıcısına müdahale ediyoruz */
+  float: right;            /* Menu elemanlarını sağa yasladık */
+  list-style: none;        /* Noktalar gitti */
+  margin-top: 30px;        /* Üst taraftan dıl boşluk ayarlandı */ 
 }
 .nav-area li {
-  display: inline-block;   /* Seçenekleri yanyana yazdırdık */
+  display: inline-block;   /* Seçenekleri yanyana yazdırdık, aynı satırda block eleman özellikleri gösterirler */
 }
 
 .nav-area li a {
-  color: #fff;
+  color: #fff;           /* Menüdeki seçeneklerin rengini belirledik */
   text-decoration: none;   /*Alt çizgiler gitti*/
   padding: 5px 20px;       /* Seçeneğin kutucuğu içindeki textin kutuya göre ayarlanması için yazıldı */
-  font-family: sans-serif;
-  font-size: 16px;
+  font-family: sans-serif; /* Yazı tipi */
+  font-size: 16px;         /* Yazı büyüklüğü */
+  transition: all ease-in-out 0.5s; /* Geçiş efektleri için geçiş stili ve süresi belirledik */
 }
 
-.nav-area li a:hover {
-  background-color: #fff; 
-  color: #333;
+.nav-area li a:hover {          /* Seçeneklerin üzerine gelindiğinde */
+  background-color: #fff;     /* Arka plan rengi beyaz olsun */
+  color: #333;                /* Yazı rengi değişsin */
+  border-radius: 10px;          /* Köşeleri yuvarladık */
 }
 
-.logo img {
-  width: 200px;
-  float: left;     /* logoyu sola yasladık */
-  height: auto;
-  margin-top: 30px;
-  background: transparent; /* Arka taraftaki fotoğraf gözüksün diye */
-  opacity: 0.3;            /* 0.1 - 1.0 arasında opaklık değeri belirlemek için kullanılır */
+.logo img {                 
+  width: 200px;             /* Genişlik belirledik */
+  float: left;              /* logoyu sola yasladık */
+  height: auto;             /* Yükseklik */
+  margin-top: 30px;         /* Üstten dış boşluk */
+  background: transparent;  /* Arka taraftaki fotoğraf gözüksün diye */
+  opacity: 0.3;             /* 0.1 - 1.0 arasında opaklık değeri belirlemek için kullanılır */
 }
 
 .welcome-text {
-  position: absolute;     /* Üstüne yazılabilir */
-  width: 600px;
-  height: 300px;
-  margin: 20% 30%;
+  position: absolute;       /* Yerini parent ına göre ayarlayacak */
+  width: 600px;             /* Genişlik */
+  height: 300px;            /* Yükseklik */
+  margin: 20% 30%;          /* Dış boşluklar */
 }
 
-.welcome-text h1 {
-  text-align: center;
-  color: #fff;
-  text-transform: uppercase;
-  font-size: 60px;
+.welcome-text h1 {          /* Ortadaki yazı */
+  text-align: center;       /* Ortaladık */
+  color: #fff;            /* Renk */
+  text-transform: uppercase;/* Tüm harfler büyük olsun */
+  font-size: 60px;          /* Yazı büyüklüğü */
 }
 
-.welcome-text a {
-  width: 100px;
-  height: 10px;
-  border: 1px solid #fff;
-  text-align: center;
-  padding: 10px 10px 15px;
-  text-decoration: none;
-  text-transform: uppercase;
-  font-size: 14px;
-  margin-top: 30px;   /* h1 ile olan uzaklığı */
-  margin-left: 230px;
-  display: block;     /* display: inline olsaydı h1 etiketi yanına gelirdi*/
-  color: #fff;
-  border-radius: 25px;
+.welcome-text a {           /* Contact Us butonuna müdahele ediyoruz */
+  display: block;           /* display: inline olsaydı h1 etiketi yanına gelirdi, block yaptık ki hem aşağıda olsun hem de genişlik yükseklik verebilelim*/
+  width: 100px;             /* Block element olarak genişliğini verdik, a etiketi normalde inline dır, öyle bıraksaydık veremezdik */
+  height: 10px;             /* Yüksekilk verdik */
+  border: 1px solid #fff; /* Kenarlıklarını ayarladık */
+  text-align: center;       /* Yazısını ortaladık */
+  padding: 10px 10px 15px;  /* İç boşluklarını ayarladık */
+  text-decoration: none;    /* Link etiketinin alttaki otomatik gelen çizgisini yok ettik */
+  text-transform: uppercase;/* Tüm harfleri büyük olsun dedik */
+  font-size: 14px;          /* Yazı büyüklüğünü ayarladık */
+  margin-top: 30px;         /* h1 ile olan uzaklığı */
+  margin-left: 230px;       /* Soldan boşluk vererek yerini ayarladık */   
+  color: #fff;            /* Yazı rengi */
+  border-radius: 25px;      /* Köşelerini yuvarladık */
 }
 
-.welcome-text a:hover {
-  background-color: #fff;
-  color: #333;
+.welcome-text a:hover {     /* Butonun üzerine gelindiğinde */
+  background-color: #fff; /* Arka plan rengi beyaz olsun */
+  color: #333;            /* Yazı rengi siyah olsun */
 }
