@@ -1,71 +1,71 @@
 body {
-  margin: 0;
+  margin: 0;                         /* Standart sayfa düzeni ayararını yaptık */
   padding: 0;
   font-family: sans-serif;
   background: #34495e;
 }
 
-.box {
-  width: 300px;
-  padding: 40px;
-  position: absolute;
-  top: 50%;          /* Form etiketinin sayfadaki yerinin belirledik*/
+.box {                               /* Login ekranının olduğu kutucuğa müdahele ediyoruz */
+  width: 300px;                      /* Genişlik */
+  padding: 40px;                     /* İç boşluk */
+  position: absolute;                /* Bu kod ve devamındaki 3 kod box ı sayfanın tam ortasında yer aldırmak için kullanıldı */
+  top: 50%;                          
   left: 50%;
-  transform: translate(-50%, -50%); /*??????????*/
-  background: #191919;
-  text-align: center;
+  transform: translate(-50%, -50%); 
+  background: #191919;             /* Arka plan rengi */
+  text-align: center;                /* Yazılar ortalandı */
 }
 
-.box h1 {
-  color: white;
-  text-transform: uppercase;
-  font-weight: 500;
+.box h1 {                            /* Login yazısı */
+  color: white;                    /* Yazı rengi */
+  text-transform: uppercase;         /* Tüm harfler büyük olsun */
+  font-weight: 500;                  /* Yazı kalınlığı */
 }
 
 .box input[type="text"],
-.box input[type="password"] {
-  background: none;
-  display: block;         /* inline-block yazsaydık butonlar yanyana olacaktı */
-  margin: 20px auto;
-  text-align: center;
-  border: 2px solid #3498db;
-  padding: 14px 10px;
-  width: 150px;
-  outline: none;
-  color: #fff;
-  border-radius: 24px;
-  transition: 0.25s;
+.box input[type="password"] {        /* Inputların her ikisine de müdahele ediyoruz */
+  background: none;                  /* Arka plan renkleri yok */
+  display: inline-block;             /* Inputlarımız block eleman olsunlar alt alta yazılsınlar dedik */
+  margin: 20px auto;                 /* Dış boşluklar */
+  text-align: center;                /* Yazı ortalansın */ 
+  border: 2px solid #3498db;       /* Kenarlıklar */
+  padding: 14px 10px;                /* İç boşluk (text ile input border arası) */
+  width: 150px;                      /* Genişlik */
+  outline: none;                     /* Çerçeve olmasın dedik */
+  color: #fff;                     /* Yazı rengi */
+  border-radius: 24px;               /* Köşeleri yuvarladık */
+  transition: 0.25s;                 /* Efekt geçiş süresi */
 }
 
 .box input[type="text"]:focus,
-.box input[type="password"]:focus {
-  width: 250px;
-  border-color: #2ecc71;
+.box input[type="password"]:focus {  /* Inputlara tıklandığında */
+  width: 250px;                      /* Genişlik artsın */
+  border-color: #2ecc71;           /* Kenarlıkların rengi değişsin */
   
 }
 
 .box input[type="text"]:focus::placeholder,
 .box input[type="password"]:focus::placeholder {
-  color: transparent;        /* Placeholder yazısını kaldırmak için yazıldı */
+  color: transparent;                 /* Kullanıcı tıkladığında placeholder yazısını kaldırmak için yazıldı */
   
 }
 
-.box input[type="submit"] {
+.box input[type="submit"] {           /* Butona müdahele ediyoruz */
   
-  background: #3498db;
-  display: block;
-  margin: 20px auto;
-  text-align: center;
-  border: 1px solid #3498db;
-  padding: 14px 40px;
-  outline: none;
-  color: #fff;
-  border-radius: 24px;
-  transition: 0.25s;
-  cursor:pointer;
-  font-size: 16px;
-  font-weight: bold;
+  background: #3498db;              /* Arka plan rengi */
+  display: block;                     /* Block eleman yaptık normalde input olduğu için default olarak inline gelir, genişlik yükselik belirleyemeyiz */
+  margin: 20px auto;                  /* Dış boşluklar */
+  text-align: center;                 /* Yazıyı ortaladık */
+  border: 1px solid #3498db;        /* Kenarlık */
+  padding: 14px 40px;                 /* İç boşluklar */
+  outline: none;                      /* Dış çerçeve olmasın */
+  color: #fff;                      /* Yazı rengi */
+  border-radius: 24px;                /* Köşeleri yuvarladık */
+  transition: 0.25s;                  /* Efekt geçiş süresi */
+  cursor:pointer;                     /* Mouse üzerine geldiğinde el işaretine dönsün dedik */
+  font-size: 16px;                    /* Yazı büyüklüğü */
+  font-weight: bold;                  /* Yazı kalınlığı */
 }
-.box input[type="submit"]:hover {
-  background: #2ecc71;
+.box input[type="submit"]:hover {     /* Butonun üzerine gelindiğinde */
+  background: #2ecc71;              /* Arka plan rengi değişsin */
 }
