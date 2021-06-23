@@ -1,0 +1,87 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background: url(bg.jpg) no-repeat ;            /* no-repeat arka plan resminin tekrar etmemesini sağlamaktadır */
+  background-size: cover;                        /* Arka plan fotoğrafı sayfanın tamamını kaplasın diye yazılmıştır */
+}
+
+.login-box {                                     /* Login formu */
+  width: 450px;                                  /* Genişliğini belirledik */
+  position: absolute;                            /* Bu login formunun sayfa üzerindeki yerini belirlemek için yazılmıştır */               
+  top: 50%;                                      /* Bu ve sonrasındaki 2 kod formu sayfanın tam ortasına yerleştirebilmek için kullanıldı */
+  left: 50%;
+  transform: translate(-50%, -50%);              /* Login kısmının sayfanın tam ortasında olabilmesi için yazıldı*/
+  border: 1px solid red;
+}
+
+.login-box h1 {                                  /* Welcome to Real World yazısına müdahele ediyoruz */
+  color: #fff;                                 /* Yazı rengini belirledik */
+  float:none;                                    /* Yazının sağa veya sola doğru yanaşık olmaması için yazıldı, yazmasaydık da olurdu */
+  font-size: 30px;                               /* Yazının büyüklüğünü ayarladık */
+  border-bottom: 5px solid white;              /* h1 etiketinin altına çizgi çizdirmiş olduk, text-decoration: underline red; gibi de yazılabilirdi */
+  margin-bottom: 50px;                           /* input box lar ile olan mesafesini ayarlamış olduk */
+  padding: 10px 0;                               /* Yazının div içerisindeki yerini belirledik */
+  transition: 0.25s;                             /* Geçiş efektinin zamanını ayarladık */     
+  text-align: center;                            /* h1 etiketini ortaladık */
+  user-select: none;                             /* Kullanıcı bu yazıyı seçemez/kopyalayamaz */
+}
+
+.login-box h1:hover{                             /* Yazının üzerine gelindiğinde rengi mavi olsun dedik */
+  color:blue;
+}
+
+.textbox {                                       /* Input box ların her ikisine de müdahele ediyoruz */
+  width: 60%;                                    /* İçerisine bulunduğu divin %60ı kadar boyuta sahip olsun */
+  overflow: hidden;                              /* overflow eğer içerik eleman box ı aşması durumunda ne olacağını belirlemek için kullanılır */
+  font-size: 20px;                               /* iconların dahil textbox içerik büyüklüklerini belirledik */     
+  padding: 10px 0;                               /* textboxların div içerisindeki konumunu ayarladık */
+  margin: 15px 20%;                              /* textboxların div içerisindeki konumunu ayarladık, ortaya doğru getirdik */
+  border-bottom: 2px solid #fff;               /* input box ların altındaki çizgileri çizdirmiş olduk */
+}
+
+.textbox i {                                     /* textbox ların önündeki icon ların */ 
+  width: 15px;                                   /* Genişliğini belirledik */
+  float: left;                                   /* div içerisindeki yerini sola yanaşık yaptık, right şeklinde de yapabilirdik, !! Bunun yerine yukarıda display:flex de yazabiliridk */
+  margin: 2px 8px;                               /* Dış boşlukları */
+  color: #fff;                                 /* Renkleri */
+}
+
+.textbox input {                                 /* Bu sefer textbox class ına sahip div içindeki inputlara müdahele ediyoruz */
+  border: none;                                  /* Dış çerçeve olmasın */
+  outline: none;                                 /* Çerçeve olmasın textbox lar dışında dedik */
+  background: transparent;                       /* Buraya none da yazılabilirdi */
+  color: white;                                /* textbox içine yazılacak olan yazının rengi */
+  font-size: 15px;                               /* textboxlar içine yazılacak olan yazıların büyüklüğü */
+  width: 80%;                                    /* textbox genişliklerini içinde bulundukları div in boyutunun 80% olacak şekilde belirledik */
+  margin: 0px 8px;                               /* Dış boşlukları */
+  
+}
+
+.textbox input::placeholder {
+  color: #fff                                  /* placeholder rengini bu şekilde belirleyebiliyoruz */
+}
+
+.textbox input[type="text"]:focus::placeholder,
+.textbox input[type="password"]:focus::placeholder {    /* Buradaki kod ile kullanıcı giriş yapmak için tıkladığında placeholder lar otomatik olarak kaybolacaktır */
+  color: transparent;
+}
+
+.btn {                                           /* Login butonu */
+  width: 40%;                                    /* Genişlik içinde bulunduğu div in 40% ı kadar olsun dedik */
+  height: 40px;                                  /* Yükseklik belirledik */
+  background: none;                              /* transparent da yazılabilirdi */
+  border: 2px solid blue;                      /* Kanarlıklar */
+  color: white;                                /* Yazı rengi */
+  padding: 5px;                                  /* İç boşluk */
+  font-size: 20px;                               /* Yazı büyüklüğü */
+  font-weight: 200;                              /* Yazı kalınlığı */
+  cursor: pointer;                               /* İmleç üzerine geldiğinde el işareti olsun */
+  border-radius: 25px;                           /* Köşeleri yuvarladık */
+  transform: translate(75%,50%);                 /* Buttonun konumunu belirledik, marginlerle oynayarak da yapabilirdik */
+  transition: 0.5s;                              /* Geçiş efektinin gecikme zamanını ayarladık */
+}
+
+.btn:hover {                                     /* Buton üzerine gelimdiğinde arka plan rengi mavi olsun dedik */
+  background-color: blue;
+}
