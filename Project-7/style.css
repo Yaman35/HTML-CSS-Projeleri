@@ -1,0 +1,150 @@
+* {                             /* Standart uygulama */
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  box-sizing: border-box;
+}
+
+.hero {                         /* Kapsayıcı div */
+  width: 100%;                  /* Genişlik sayfanın tamamı 100vw*/
+  height: 100vh;                /* Yükseklik yine sayfanın tamamı */
+  background-image: url(img/background.png); /* Sayfa arka plan resmi koyuldu */
+  background-size: cover;       /* Resim arka plana tam otursun */
+  background-position: center;  /* Resim ortalandı */
+  position: relative;           /* Bunun üzerinde position absolute olanları rahatlıkla hareket ettirebilelim diye */
+  overflow: hidden;             /* Taşmalar gizlensin */
+}
+
+.logo {                         /* coventic logosu */
+  width: 100px;                 /* Genişlik verildi */
+  cursor: pointer;              /* Mouse olayı */
+}
+
+.navbar {                       /* logo ve butonun olduğu div */
+  width: 85%;                   /* Genişlik olarak sayfanın %85 i verildi */
+  height: 15%;                  /* Yükseklik olarak da sayfanın %15 i verildi */
+  margin: auto;                 /* Böylelikle sağdan soldan ayarşamış olduk */
+  display: flex;                /* Yapıya flexbox özelliği kazandırıldı */          
+  justify-content: space-between; /* Yatayda ortalandı */
+  align-items: center;          /* Dikeyde ortalandı */
+}
+
+button {                        /* Sign-up butonu */
+  color: #fbfcfd;             /* Yazı rengi */
+  padding: 10px 25px;           /* İç boşluk */
+  background: transparent;      /* Arka plan rengi transparan */
+  border: 1px solid #fff;     /* Kenarlıklar */
+  border-radius: 20px;          /* Köşeler yuvarlandı */
+  outline: none;                /* Çerçeve olmasın */
+  cursor: pointer;              /* Cursor olayı */
+}
+
+.content {                      /* Content classına sahip div içindekiler */
+  color: #fbfcfd;             /* Yazı rengi */
+  position: absolute;           /* Bu ve sonrasındaki 3 kod sayfadaki konumunu belirtebilmek için */
+  top: 50%;
+  left: 8%;
+  transform: translateY(-50%);
+  z-index: 2;                   /* Ön plana gelsin */
+}
+
+h1 {
+  font-size: 80px;              /* .content classı içindeki yazı büyüklüğü */
+  margin: 10px 0 30px;          /* Diğer elemanlarla aralarındaki dış boşluk */
+  line-height: 80px;            /* Satır arası boşluk büyüklüğü */
+}
+
+.side-bar {                     /* Sayfanın sağında oluşturacağımız bar */
+  width: 50px;                  /* Genişlik */
+  height: 100vh;                /* Yükselik tam sayfa boyu */
+  background: linear-gradient(#00545d, #000729); /* Arka plan rengi */
+  position: absolute;           /* Bu kod ve sonrasındaki 2 kod ile sayfadaki konumunu ayarladık */
+  right: 0;
+  top: 0;
+}
+
+
+.menu {                         /* Menu işareti */
+  display: block;               /* img olduğundan inline biz onu bu şekilde block yaptık ve artık boyutuyla oynayabiliriz */
+  width: 25px;                  /* Genişlik verdik */
+  margin: 40px auto 0;          /* Dışındaki divin kenarları ile olan uzaklıklarını belirledik */
+  cursor: pointer;              /* Mouse olayı */
+}
+
+.social-links img,              /* Tüm icon fotoları */
+.useful-links img {
+  width: 25px;                  /* Genişik verdik otomatik olarak kare şeklinde boyutlandılar */
+  margin: 5px auto;             /* Dış mesafe, bir nevi konumları */
+  cursor: pointer;              /* Mouse olayı */
+}
+
+.social-links {                 /* Sosyal medya iconlarının bulunduğu div */
+  width: 100%;                  /* Kapsayıcı div ile aynı genişlik olsun */
+  text-align: center;           /* Ortaladık yatayda */
+  position: absolute;           /* Bulunduğu div üzerinde yerini belirleyebilmek için bu ve sonraki kod yazıldı */
+  top: 40%;
+}
+
+.useful-links {                 /* Diğer iconların bulunduğu div */     
+  width: 50px;                  /* Burada width:100% de yazılabilirdi çünkü dış div (sidebar class lı olan) genişliği zaten 50px di */
+  text-align: center;           /* Ortaladık yatayda */
+  position: absolute;           /* Bulunduğu div üzerinde yerini belirleyebilmek için bu ve sonraki kod yazıldı */
+  bottom: 5%;                   /* Alt taraftan mesafesini ayarladık */
+}
+
+.bubbles img {                  /* Baloncuklara müdahele ediyoruz */
+  width: 50px;                  /* Baloncukların boyutunu ayarladık */
+  animation: bubble 7s linear infinite; /* Baloncuklara animasyon kazandırdık*/
+}
+
+.bubbles {                      /* Baloncukların içinde bulunduğu div e müdahele ediyoruz */
+  border: 1px solid red;
+  width: 100%;                  /* Sayfa genişliği kadar olsun */
+  display: flex;                /* Flex özelliği */
+  align-items: center;          /* Yatayda ortaladık */
+  justify-content: space-around;/* Dikeyde aralarına boşluk bıraktık */
+  position: absolute;           /* Bu ve alttaki kod ile balocukların ilk başlangıç yerini sayfanın alt tarafından dışarı aldık */
+  bottom: -70px;
+}
+
+@keyframes bubble {             /* Keyframes Kullanımı */
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-80vh);
+    opacity: 0;
+  }
+}
+.bubbles img:nth-child(1) {
+  animation-delay: 6s;
+  width: 25px;
+}
+.bubbles img:nth-child(2) {
+  animation-delay: 1s;
+}
+.bubbles img:nth-child(3) {
+  animation-delay: 5s;
+}
+.bubbles img:nth-child(4) {
+  animation-delay: 2s;
+  width: 25px;
+}
+.bubbles img:nth-child(5) {
+  animation-delay: 4s;
+  width: 25px;
+}
+.bubbles img:nth-child(6) {
+  animation-delay: 1.2s;
+}
+.bubbles img:nth-child(7) {
+  animation-delay: 7s;
+  width: 25px;
+} 
